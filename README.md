@@ -192,7 +192,7 @@ The cloud function and CLI support basic image operations to offload that work f
 ```sh
 LAT="60.222"
 LON="24.83"
-LOCATION="Espoo"
+LOCATION="Manchester"
 BATTERY="100"
 TIMEZONE="Europe/Helsinki"
 
