@@ -94,8 +94,8 @@ jobs:
         with:
           version: '408.0.0'
       # https://cloud.google.com/sdk/gcloud/reference/functions/deploy
-      - run: gcloud functions deploy weather-display --entry-point render --source=$FILE_URL --region $GCP_REGION --project $GCP_PROJECT
+      - run: gcloud functions deploy walldisplay --entry-point render --source=$FILE_URL --region $GCP_REGION --project $GCP_PROJECT
       - name: 'Test rendering'
         env:
           WEATHER_DISPLAY_API_KEY: ${{ secrets.WEATHER_DISPLAY_API_KEY }}
-        run: curl --fail "$(gcloud functions describe weather-display --region $GCP_REGION --project $GCP_PROJECT --format=json | jq -r .httpsTrigger.url)?lat=60.222&lon=24.83&locationName=Espoo&batteryLevel=100&timezone=Europe/Helsinki&apiKey=$WEATHER_DISPLAY_API_KEY"
+        run: curl --fail "$(gcloud functions describe walldisplay --region $GCP_REGION --project $GCP_PROJECT --format=json | jq -r .httpsTrigger.url)?lat=60.222&lon=24.83&locationName=Espoo&batteryLevel=100&timezone=Europe/Helsinki&apiKey=$WEATHER_DISPLAY_API_KEY"
