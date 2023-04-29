@@ -81,7 +81,7 @@ jobs:
       contents: read
     env:
       FILE_URL: gs://walldisplay/${{ needs.build.outputs.file-name }}
-      GCP_REGION: europe-west3
+      GCP_REGION: europe-west2
       GCP_PROJECT: adroit-terminus-384719
     steps:
       - name: Authenticate to Google Cloud
