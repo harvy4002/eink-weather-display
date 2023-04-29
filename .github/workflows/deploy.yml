@@ -36,8 +36,8 @@ jobs:
     env:
       GITHUB_SHA: ${{ github.sha }}
       GCP_REGION: europe-west3
-      GCP_PROJECT: weather-display-367406
-      GCP_BUCKET: weather-display-deployment
+      GCP_PROJECT: adroit-terminus-384719
+      GCP_BUCKET: walldisplay
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -80,9 +80,9 @@ jobs:
       id-token: write
       contents: read
     env:
-      FILE_URL: gs://weather-display-deployment/${{ needs.build.outputs.file-name }}
+      FILE_URL: gs://walldisplay/${{ needs.build.outputs.file-name }}
       GCP_REGION: europe-west3
-      GCP_PROJECT: weather-display-367406
+      GCP_PROJECT: adroit-terminus-384719
     steps:
       - name: Authenticate to Google Cloud
         uses: google-github-actions/auth@v0.8.3
