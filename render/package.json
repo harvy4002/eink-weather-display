@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "main": "entrypoints/cloudFunction.js",
+  "engines": {
+    "node": "^14"
+  },
   "scripts": {
     "test": "jest",
     "start": "http-server src/templates/ -c-1",
