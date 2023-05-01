@@ -15,7 +15,7 @@ import requests
 import shutil
 
 
-BINARY_PATH = '/home/pi/eink-weather-display/rasp/usb-it8951/build/it8951'
+BINARY_PATH = '/home/harvy/eink-weather-display/rasp/usb-it8951/build/it8951'
 # Millivoltages as positive integer. E.g. 2500 => -2500 mV = -2.5V
 VCOM = 1150
 
@@ -212,7 +212,7 @@ def shutdown(pj):
 
 def git_pull():
     logging.info('Running git pull ...')
-    run_cmd('cd /home/pi/eink-weather-display && git stash && git pull && git stash apply')
+    run_cmd('cd /home/harvy/eink-weather-display && git stash && git pull && git stash apply')
 
 
 def is_ssh_active():

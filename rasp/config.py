@@ -15,7 +15,7 @@ config = {
 }
 
 logging.basicConfig(
-    filename='/home/pi/status.log',
+    filename='/home/harvy/status.log',
     level=logging.DEBUG,
     format='%(asctime)s %(levelname)s\t%(message)s',
     datefmt='%Y-%m-%dT%H:%M:%S')
