@@ -5,6 +5,7 @@ import { XMLParser } from 'fast-xml-parser'
 import _ from 'lodash'
 import { GenerateOptions } from 'src/rendering/core'
 import { Coordinate } from 'src/types'
+import { logger } from 'src/utils/logger'
 import { getTodayDates, writeDebugFile } from 'src/utils/utils'
 
 type FmiBaseDataPoint = {
@@ -232,7 +233,8 @@ function parseMembersFromRoot(parsed: any): Record<string, any>[] {
     throw new Error(`XML validation error: ['wfs:FeatureCollection'] missing`)
   }
   const collection = parsed['wfs:FeatureCollection']
-  if (!('wfs:member' in collection)) {
+  logger.info('collection', collection)
+  if (!('wfs:member' in JSON.parse(collection))) {
     throw new Error(
       `XML validation error: ['wfs:FeatureCollection']['wfs:member'] missing`
     )
