@@ -12,7 +12,7 @@ import {
   calculateLongTermForecast,
   calculateShortTermForecast,
   calculateTodaySummaryFromFmiData,
-} from 'src/weather/weather'
+} from 'src/weather/weatherold'
 
 const mockOpts: GenerateOptions = {
   switchDayAtHour: 18,
